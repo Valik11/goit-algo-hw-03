@@ -2,8 +2,8 @@ from datetime import datetime, timedelta
 
 # Дані про користувачі та їхні дні народження
 users_data = [
-    {"name": "John Doe", "birthday": "1985.01.23"},
-    {"name": "Jane Smith", "birthday": "1990.01.27"},
+    {"name": "John Doe", "birthday": "1985.03.17"},
+    {"name": "Jane Smith", "birthday": "1990.03.16"},
     {"name": "Bruce Wayne", "birthday": "1990.03.11"},
 ]
 
