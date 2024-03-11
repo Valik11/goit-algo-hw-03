@@ -2,6 +2,10 @@ import random
 
 def get_numbers_ticket(min, max, quantity):
     # Перевірка валідності вхідних параметрів
+    if any(not isinstance(num, int) for num in [min, max, quantity]):
+        print("Помилка: Некоректні типи даних. Всі параметри повинні бути цілими числами.")
+        return []
+
     if not (1 <= min <= max <= 1000):
         print("Помилка: Некоректні значення параметрів min, max")
         return []
@@ -21,5 +25,5 @@ def get_numbers_ticket(min, max, quantity):
     return result
 
 # Приклад використання:
-lottery_numbers = get_numbers_ticket(1, 40, 5)
+lottery_numbers = get_numbers_ticket(1, 40, 6)
 print("Ваші лотерейні числа:", lottery_numbers)

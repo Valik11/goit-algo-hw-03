@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 users_data = [
     {"name": "John Doe", "birthday": "1985.03.17"},
     {"name": "Jane Smith", "birthday": "1990.03.16"},
-    {"name": "Bruce Wayne", "birthday": "1990.03.11"},
+    {"name": "Bruce Wayne", "birthday": "1990.03.11"}
 ]
 
 def find_next_weekday(d, weekday: int):
