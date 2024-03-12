@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 users_data = [
     {"name": "John Doe", "birthday": "1985.03.17"},
     {"name": "Jane Smith", "birthday": "1990.03.16"},
-    {"name": "Bruce Wayne", "birthday": "1990.03.11"}
+    {"name": "Bruce Wayne", "birthday": "1990.03.14"}
 ]
 
 def find_next_weekday(d, weekday: int):
@@ -27,14 +27,14 @@ def prepare_users(users):
 
     return prepared_users_list
 
-def get_upcoming_birthdays(users):
+def get_upcoming_birthdays(users_data):
     # Функція для знаходження користувачів, дні народження яких наступають на цьому тижні
     days = 7
     today = datetime.today().date()
     upcoming_birthdays = []
 
-    for user in users:
-        birthday_this_year = user["birthday"].replace(year=today.year)
+    for user in users_data:
+        birthday_this_year = datetime.strptime(user["birthday"], "%Y.%m.%d").date().replace(year=today.year)
 
         # Якщо день народження вже пройшов у поточному році, розглядаємо його наступним роком
         if birthday_this_year < today:
@@ -55,6 +55,5 @@ def get_upcoming_birthdays(users):
     return upcoming_birthdays
 
 # Підготовка та вивід результату
-prepared_users = prepare_users(users_data)
-upcoming_birthdays = get_upcoming_birthdays(prepared_users)
+upcoming_birthdays = get_upcoming_birthdays(users_data)
 print(upcoming_birthdays)
